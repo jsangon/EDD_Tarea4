@@ -1,29 +1,69 @@
 package cuentas;
 
 /**
+ * Clase CCuenta. 
  *
- * @author jesus
+ * @version 29-01-2023
+ * @author Jesús Santos González
  */
 public class CCuenta {
 
+    /**
+     * Nombre del titular de la cuenta.
+     */
     private String nombre;
+
+    /**
+     * Número de cuenta. dsa
+     * 
+     */
     private String cuenta;
+
+    /**
+     * Saldo actual de la cuenta.
+     */
     private double saldo;
+
+    /**
+     * Tipo de interés de la cuenta.
+     */
     private double tipoInterés;
 
+    /**
+     * Constructor vacío
+     */
     public CCuenta() {
     }
 
+    /**
+     * Constructor para la cuenta
+     *
+     * @param nom nombre del titular
+     * @param cue identificador de la cuenta
+     * @param sal saldo de la cuenta
+     * @param tipo tipo de interés
+     */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
         cuenta = cue;
         saldo = sal;
     }
 
+    /**
+     * Metodo estado
+     *
+     * @return get saldo: saldo actual de la cuenta
+     */
     public double estado() {
         return getSaldo();
     }
 
+    /**
+     * Metodo ingresar.Actualiza el saldo con la cantidad recibida como parámetro
+     *
+     * @param cantidad: cantidad a ingresar en la cuenta
+     * @throws java.lang.Exception si cantidad es negativo
+     */
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");
@@ -31,6 +71,12 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Metodo retirar.Actualiza el saldo con la cantidad recibida como parámetro
+     *
+     * @param cantidad: cantidad a retirar en la cuenta
+     * @throws java.lang.Exception si la cantidad es negativa o no hay suficiente saldo
+     */
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0) {
             throw new Exception("No se puede retirar una cantidad negativa");
@@ -42,58 +88,74 @@ public class CCuenta {
     }
 
     /**
-     * @return the nombre
+     * Método getNombre
+     *
+     * @return nombre: nombre del titular de la cuenta.
      */
-    String getNombre() {
+    private String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Método setNombre
+     *
+     * @param nombre: nombre del titular de la cuenta
      */
-    void setNombre(String nombre) {
+    private void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * Método getCuenta
+     *
+     * @return cuenta: número de cuenta.
      */
-    String getCuenta() {
+    private String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Método setNombre
+     *
+     * @param cuenta: número de cuenta
      */
-    void setCuenta(String cuenta) {
+    private void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * Método getSaldo
+     *
+     * @return saldo: saldo actual de la cuenta.
      */
-    double getSaldo() {
+    private double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * Método setNombre
+     *
+     * @param saldo: Saldo de la cuenta
      */
-    void setSaldo(double saldo) {
+    private void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * Método getTipoInterés
+     *
+     * @return tipoInterés: tipo de interes actual de la cuenta.
      */
-    double getTipoInterés() {
+    private double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * Método setNombre
+     *
+     * @param tipoInterés: Tipo de intereés de la cuenta
      */
-    void setTipoInterés(double tipoInterés) {
+    private void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
 }
