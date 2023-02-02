@@ -1,7 +1,7 @@
 package cuentas;
 
 /**
- * Clase CCuenta. 
+ * Clase CCuenta.
  *
  * @version 29-01-2023
  * @author Jesús Santos González
